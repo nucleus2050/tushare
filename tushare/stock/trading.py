@@ -592,8 +592,12 @@ def get_index():
           volume:成交量(手)
           amount:成交金额（亿元）
     """
+    headers = {
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+    }
+    headers['Referer'] = "https://finance.sina.com.cn"
     request = Request(ct.INDEX_HQ_URL%(ct.P_TYPE['http'],
-                                             ct.DOMAINS['sinahq']))
+                                             ct.DOMAINS['sinahq']),headers=headers)
     text = urlopen(request, timeout=10).read()
     text = text.decode('GBK')
     text = text.replace('var hq_str_sh', '').replace('var hq_str_sz', '')

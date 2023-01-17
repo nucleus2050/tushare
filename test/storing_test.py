@@ -7,7 +7,8 @@ import tushare as ts
 
 def csv():
     df = ts.get_hist_data('000875')
-    df.to_csv('c:/day/000875.csv',columns=['open','high','low','close'])
+    print(df)
+    # df.to_csv('c:/day/000875.csv',columns=['open','high','low','close'])
 
 def xls():
     df = ts.get_hist_data('000875')
@@ -58,4 +59,4 @@ def nosql():
 #     print conn.db.tickdata.find()
     
 if __name__ == '__main__':
-    nosql()
+    csv()

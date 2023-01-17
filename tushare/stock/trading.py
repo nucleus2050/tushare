@@ -17,7 +17,7 @@ import numpy as np
 import datetime
 from tushare.stock import cons as ct
 import re
-from pandas.compat import StringIO
+from io import StringIO
 from tushare.util import dateu as du
 from tushare.util.formula import MA
 import os
@@ -26,7 +26,7 @@ from tushare.stock.fundamental import get_stock_basics
 try:
     from urllib.request import urlopen, Request
 except ImportError:
-    from urllib2 import urlopen, Request
+    from urllib.request import urlopen, Request
 
 
 def get_hist_data(code=None, start=None, end=None,

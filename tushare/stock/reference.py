@@ -22,7 +22,7 @@ from tushare.util.netbase import Client
 try:
     from urllib.request import urlopen, Request
 except ImportError:
-    from urllib2 import urlopen, Request
+    from urllib.request import urlopen, Request
 
 
 def profit_data(year=2017, top=25, 
